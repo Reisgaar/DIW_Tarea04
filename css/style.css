@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/*
+	Para crear el css, en command line
+		- ubicar en la carpeta
+		- sass nombrearchivo.scss nombrearchivo.css
+			p.e.: sass style.scss style.css
+
+		- para extended (por defecto) o compressed
+			sass --style=compressed nombrearchivo.scss nombrearchivo.css
+			* se suele nombrar el archivo nombrearchivo.min.css
+
+	Para que vaya actualizando solo
+		- sass --watch nombrearchivo.scss nombrearchivo.css
+
+	Flags de compilación
+		--no-source-map
+		--stop-on-error
+		--embred-source-map
+		--help
+		--quiet
+		--color / --no-color
+		--trace
+*/
+body {
+  font-family: Verdana;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  margin: 10px auto;
+  max-width: 1400px;
+}
+.header img {
+  width: 80px;
+  margin-left: 10px;
+}
+.header h1 {
+  text-align: center;
+  margin: 0px auto;
+}
+.header .lang {
+  float: right;
+  margin-right: 10px;
+}
+.header .lang a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.navlist {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+}
+.navlist li {
+  display: inline;
+}
+.navlist li a {
+  position: relative;
+  text-decoration: none;
+  margin: 5px 10px;
+}
+.navlist .navlist--blanco {
+  color: black;
+}
+.navlist .navlist--blanco:hover {
+  background-color: black;
+  color: white;
+}
+.navlist .navlist--blanco.selected:hover {
+  background-color: white;
+  color: black;
+  cursor: default;
+}
+.navlist .navlist--rrss img {
+  width: 25px;
+  height: 25px;
+  margin: 0px -8px;
+}
+.navlist .navlist--rrss img:hover {
+  filter: invert(1);
+  transform: scale(1.2);
+}
+.navlist .navlist--negro {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 3px 5px;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+.navlist .navlist--negro:hover {
+  background-color: white;
+  color: black;
+}
+
+.selected:before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 3px;
+  bottom: -3px;
+}
+
+.main {
+  margin: auto;
+  max-width: 1200px;
+  padding: 1%;
+}
+.main img {
+  width: 100%;
+}
+.main .article {
+  margin: auto;
+  width: 90%;
+}
+.main .article.texto {
+  font-size: 0.9em;
+  text-align: justify;
+  line-height: 20px;
+}
+.main .article.texto .texto--alumno {
+  margin: 10px 0px;
+}
+.main .article.texto .texto--superior {
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  padding: 10px;
+  margin-top: 0;
+}
+.main .article.texto .texto--video {
+  text-align: center;
+  font-size: 0.8em;
+  margin: 5px 0 30px 0;
+}
+.main .article.texto .texto--inferior {
+  margin-bottom: 5px;
+}
+.main .article .autor {
+  display: flex;
+  background-color: rgba(255, 80, 80, 0.1);
+  padding: 10px 10px 20px 10px;
+}
+.main .article .autor img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+.main .article .autor p {
+  margin: auto;
+  font-size: 0.8em;
+  word-spacing: 5px;
+}
+.main .article .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+.main .article .video-container iframe {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 10px 25px 10px;
+}
+.footer img {
+  width: 80px;
+}
+.footer .address p {
+  font-size: 0.8em;
+}
+.footer p {
+  font-size: 0.7em;
+  margin: 5px 0px;
+}
+
+@media (max-width: 720px) {
+  .header h1 {
+    width: 270px;
+  }
+}
+@media (max-width: 600px) {
+  .navlist__nav {
+    display: block !important;
+    margin: 10px 0px;
+  }
+
+  .navlist--blanco:hover {
+    display: block;
+  }
+  .navlist--blanco.selected:hover {
+    display: unset;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    display: block;
+    text-align: center;
+  }
+  .header h1 {
+    margin-bottom: 25px;
+  }
+  .header .lang {
+    right: 0px;
+    top: 10px;
+    margin-right: 10px;
+    position: absolute;
+  }
+
+  .autor {
+    display: block;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

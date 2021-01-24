@@ -1,0 +1,312 @@
+/*
+	Para crear el css, en command line
+		- ubicar en la carpeta
+		- sass nombrearchivo.scss nombrearchivo.css
+			p.e.: sass style.scss style.css
+	
+		- para extended (por defecto) o compressed
+			sass --style=compressed nombrearchivo.scss nombrearchivo.css
+			* se suele nombrar el archivo nombrearchivo.min.css
+
+	Para que vaya actualizando solo
+		- sass --watch nombrearchivo.scss nombrearchivo.css
+
+	Flags de compilación
+		--no-source-map
+		--stop-on-error
+		--embred-source-map
+		--help
+		--quiet
+		--color / --no-color
+		--trace
+*/
+
+// Variables
+$negro: black;
+$borderojo: 2px solid red;
+
+// @mixin
+@mixin centrado {
+	margin: auto;
+}
+
+// Tamaños para los iconos
+$images : (
+	"icon" : 25px,
+	"logo" : 80px,
+	"image" : 100px
+);
+
+//Breakpoints para la página
+$breakpoints : (
+	"pequeño" : 576px,
+	"medio" : 768px,
+	"grande" : 992px
+);
+
+
+// Configuración de elementos generales
+body {
+	font-family: Verdana;
+	margin: 0;
+}
+
+
+// Header
+.header {
+	display: flex;
+	width: 100%;
+	margin: 10px auto;
+	max-width: 1400px;
+
+	img {
+		width: map-get($images, "logo");
+		margin-left: 10px;
+	}
+
+	h1 {
+		text-align: center;
+		margin: 0px auto;
+	}
+
+	.lang {
+		float: right;
+		margin-right: 10px;
+
+		a{
+			position: relative;
+			text-decoration:none;
+			color: $negro;
+		}
+	}
+}
+
+
+// Menús de navegación con BEM
+.navlist {
+	list-style-type: none;
+	padding: 0;
+	text-align: center;
+	font-weight: bold;
+
+	li {
+		display: inline;
+
+		a {
+			position: relative;
+			text-decoration: none;
+			margin: 5px 10px;
+		}
+	}
+
+
+	.navlist--blanco {
+		color: $negro;
+
+		&:hover{
+			background-color: $negro;
+			color: white;			
+		}
+
+		&.selected:hover {
+			background-color: white;
+			color: $negro;
+			cursor: default;
+		}
+	}
+
+	.navlist--rrss {
+
+		img {
+			width: map-get($images, "icon");
+			height: map-get($images, "icon");
+			margin: 0px -8px;
+
+			&:hover{
+				filter:invert(1);
+				transform: scale(1.2);			
+			}
+		}
+	}
+
+	.navlist--negro {
+		display: inline-block;
+		background-color: $negro;
+		color: white;
+		padding: 3px 5px;
+		font-size: 0.8em;
+		font-weight: normal;
+
+		&:hover{
+			background-color: white;
+			color: $negro;			
+		}
+	}
+}
+
+// Efecto de subrayado del elemento menú seleccionado
+.selected:before {
+	content: "";
+	position: absolute;
+	background-color: $negro;
+	width: 100%;
+	height: 3px;
+	bottom: -3px;
+}
+
+// Parte principal de la web
+.main {
+	@include centrado;
+	max-width: 1200px;
+	padding: 1%;
+
+	img {
+		width: 100%;
+	}
+	
+	.article {
+		@include centrado;
+		width: 90%;
+
+		// Diferentes tipos de textos del main
+		&.texto {
+			font-size: 0.9em;
+			text-align: justify;
+			line-height: 20px;
+
+			.texto--alumno {
+				margin: 10px 0px;
+			}
+
+			.texto--superior {
+				border-top: $borderojo;
+				border-bottom: $borderojo;
+				padding: 10px;
+				margin-top: 0;
+			}
+
+			.texto--video {
+				text-align: center;
+				font-size: 0.8em;
+				margin: 5px 0 30px 0;
+			}
+
+			.texto--inferior {
+				margin-bottom: 5px;
+			}
+		}
+		
+		// Recuadro con la foto y descripción del autor
+		.autor {
+			display: flex;
+			background-color: rgba(255, 80, 80, 0.1);
+			padding: 10px 10px 20px 10px;
+
+			img {
+				width: map-get($images, "image");
+				height: map-get($images, "image");
+				border-radius: 50px;
+				margin-right: 10px;
+			}
+
+			p {
+				@include centrado;
+				font-size: 0.8em;
+				word-spacing: 5px;
+			}
+		}
+		
+		// Contenedor de vídeo
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			height: 0;
+
+			iframe {
+				border: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+// Footer
+.footer {
+	background-color: $negro;
+	color: white;
+	text-align: center;
+	padding: 10px 10px 25px 10px;
+
+	img{
+		width: map-get($images, "logo");
+	}
+
+	.address{
+		p {
+			font-size: 0.8em;
+		}
+	}
+
+	p {
+		font-size: 0.7em;
+		margin: 5px 0px;
+	}
+}
+
+// Breakpoints de la página
+@media (max-width: 720px) {
+	.header {
+
+		h1 {
+			width: 270px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+
+	.navlist__nav {
+		display: block !important;
+		margin: 10px 0px;
+	}
+
+
+	.navlist--blanco {
+
+		&:hover{
+			display: block;			
+		}
+
+		&.selected:hover {
+			display: unset;
+		}
+	}
+	
+}
+
+@media (max-width: 480px) {
+	.header {
+		display: block;
+		text-align: center;
+	
+		h1 {
+			margin-bottom: 25px;
+		}
+	
+		.lang {
+			right: 0px;
+			top: 10px;
+			margin-right: 10px;
+			position: absolute;
+		}
+	}
+
+	.autor {
+		display: block;
+    	text-align: center;
+	}
+}
