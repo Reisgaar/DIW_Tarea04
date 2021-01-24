@@ -133,7 +133,7 @@ body {
 		display: inline-block;
 		background-color: $negro;
 		color: white;
-		padding: 3px 5px;
+		padding: 3px 0px;
 		font-size: 0.8em;
 		font-weight: normal;
 
@@ -188,6 +188,7 @@ body {
 			.texto--video {
 				text-align: center;
 				font-size: 0.8em;
+				line-height: 1.2em;
 				margin: 5px 0 30px 0;
 			}
 
@@ -285,7 +286,6 @@ body {
 			display: unset;
 		}
 	}
-	
 }
 
 @media (max-width: 480px) {
@@ -299,9 +299,9 @@ body {
 	
 		.lang {
 			right: 0px;
-			top: 10px;
+			top: -185px;
 			margin-right: 10px;
-			position: absolute;
+			position: relative;
 		}
 	}
 
