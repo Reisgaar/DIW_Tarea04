@@ -222,7 +222,7 @@ body {
     position: absolute;
   }
 
-  .autor {
+  .main .article .autor {
     display: block;
     text-align: center;
   }

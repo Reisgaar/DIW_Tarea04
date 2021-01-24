@@ -305,8 +305,12 @@ body {
 		}
 	}
 
-	.autor {
-		display: block;
-    	text-align: center;
+	.main{
+		.article {
+			.autor {
+				display: block;
+				text-align: center;
+			}
+		}
 	}
 }
