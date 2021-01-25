@@ -29,9 +29,9 @@ body {
 
 .header {
   display: flex;
-  width: 100%;
+  width: 90%;
   margin: 10px auto;
-  max-width: 1400px;
+  max-width: 1080px;
 }
 .header__img {
   width: 80px;
@@ -43,7 +43,6 @@ body {
 }
 .header__lang {
   float: right;
-  margin-right: 10px;
   margin-bottom: -20px;
 }
 .header__lang__a {
@@ -192,7 +191,7 @@ body {
   margin: 5px 0px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .header__h1 {
     width: 270px;
   }
@@ -219,14 +218,13 @@ body {
   }
   .header__h1 {
     transform: translate(0px, -50px);
-    font-size: 1.8em;
+    font-size: 1.7em;
     width: unset;
     height: 66px;
   }
   .header__lang {
     float: unset;
     margin-bottom: unset;
-    margin-right: unset;
     transform: translate(0px, -150px);
   }
 

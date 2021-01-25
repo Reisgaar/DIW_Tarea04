@@ -51,9 +51,9 @@ body {
 // Header
 .header {
 	display: flex;
-	width: 100%;
+	width: 90%;
 	margin: 10px auto;
-	max-width: 1400px;
+	max-width: 1080px;
 
 	&__img {
 		width: map-get($images, "logo");
@@ -67,7 +67,6 @@ body {
 
 	&__lang {
 		float: right;
-		margin-right: 10px;
 		margin-bottom: -20px;
 
 		&__a{
@@ -256,7 +255,7 @@ body {
 }
 
 // Breakpoints de la página
-@media (max-width: 720px) {
+@media (max-width: 768px) {
 	.header {
 
 		&__h1 {
@@ -299,7 +298,7 @@ body {
 	
 		&__h1 {
 			transform: translate(0px, -50px);
-			font-size: 1.8em;
+			font-size: 1.7em;
 			width: unset;
 			height: 66px;
 		}
@@ -307,7 +306,6 @@ body {
 		&__lang {
 			float: unset;
 			margin-bottom: unset;
-			margin-right: unset;
 			transform: translate(0px, -150px);
 		}
 	}
