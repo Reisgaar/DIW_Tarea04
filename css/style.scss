@@ -291,16 +291,23 @@ body {
 	.header {
 		display: block;
 		text-align: center;
+
+		&__img {
+			transform: translate(0px, 100px);		
+		}
 	
 		&__h1 {
-			margin-bottom: 25px;
+			transform: translate(0px, -50px);
+			font-size: 1.8em;
+			width: unset;
+			height: 66px;
 		}
 	
 		&__lang {
-			right: 0px;
-			top: -185px;
-			margin-right: 10px;
-			position: relative;
+			float: unset;
+			margin-bottom: unset;
+			margin-right: unset;
+			transform: translate(0px, -150px);
 		}
 	}
 

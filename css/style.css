@@ -213,14 +213,20 @@ body {
     display: block;
     text-align: center;
   }
+  .header__img {
+    transform: translate(0px, 100px);
+  }
   .header__h1 {
-    margin-bottom: 25px;
+    transform: translate(0px, -50px);
+    font-size: 1.8em;
+    width: unset;
+    height: 66px;
   }
   .header__lang {
-    right: 0px;
-    top: -185px;
-    margin-right: 10px;
-    position: relative;
+    float: unset;
+    margin-bottom: unset;
+    margin-right: unset;
+    transform: translate(0px, -150px);
   }
 
   .main__article__autor {
