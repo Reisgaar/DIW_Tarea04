@@ -57,6 +57,7 @@ body {
 
 	&__img {
 		width: map-get($images, "logo");
+		margin-left: 5px;
 	}
 
 	&__h1 {

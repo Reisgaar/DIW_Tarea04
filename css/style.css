@@ -35,6 +35,7 @@ body {
 }
 .header__img {
   width: 80px;
+  margin-left: 5px;
 }
 .header__h1 {
   text-align: center;
