@@ -1,33 +1,16 @@
 /*
-	Para crear el css, en command line
-		- ubicar en la carpeta
-		- sass nombrearchivo.scss nombrearchivo.css
-			p.e.: sass style.scss style.css
-	
-		- para extended (por defecto) o compressed
-			sass --style=compressed nombrearchivo.scss nombrearchivo.css
-			* se suele nombrar el archivo nombrearchivo.min.css
+	Diseño de Aplicaciones web - Tarea 04
 
-	Para que vaya actualizando solo
-		- sass --watch nombrearchivo.scss nombrearchivo.css
-
-	Flags de compilación
-		--no-source-map
-		--stop-on-error
-		--embred-source-map
-		--help
-		--quiet
-		--color / --no-color
-		--trace
+	Asier García Aristu
 */
 
-// Variables
+// Variables de colores
 $negro: black;
 $blanco: white;
 $rojoclaro: rgba(255, 80, 80, 0.1);
 $borderojo: 2px solid red;
 
-// @mixin
+// @mixin para hacer @include en los elementos centrados
 @mixin centrado {
 	margin: auto;
 }
@@ -40,7 +23,7 @@ $images : (
 );
 
 
-// Configuración de elementos generales
+// Configuración general del body
 body {
 	font-family: Verdana;
 	margin: 0;
@@ -48,13 +31,14 @@ body {
 }
 
 
-// Header
+// Bloque header
 .header {
 	display: flex;
 	width: 90%;
 	margin: 10px auto;
 	max-width: 1080px;
 
+	//Elementos dentro del header
 	&__img {
 		width: map-get($images, "logo");
 		margin-left: 5px;
@@ -78,13 +62,14 @@ body {
 }
 
 
-// Menús de navegación con BEM
+// Bloque de menús de navegación
 .navlist {
 	list-style-type: none;
 	padding: 0;
 	text-align: center;
 	font-weight: bold;
 
+	// Elementos del menú
 	&__li {
 		display: inline;
 
@@ -95,7 +80,8 @@ body {
 		}
 	}
 
-
+	// Modificadores para cada menú
+	// Menu de navegación superior
 	&--blanco {
 		color: $negro;
 
@@ -111,6 +97,7 @@ body {
 		}
 	}
 
+	// Menú de redes sociales en el footer
 	&--rrss {
 
 		img {
@@ -125,6 +112,7 @@ body {
 		}
 	}
 
+	// Menú del footer
 	&--negro {
 		display: inline-block;
 		background-color: $negro;
@@ -150,12 +138,13 @@ body {
 	bottom: -3px;
 }
 
-// Parte principal de la web
+// Bloque de la parte principal
 .main {
 	@include centrado;
 	max-width: 1200px;
 	padding: 1%;
 
+	// Elementos del main
 	&__img {
 		width: 100%;
 	}
@@ -164,12 +153,12 @@ body {
 		@include centrado;
 		width: 90%;
 
-		// Diferentes tipos de textos del main
 		&__texto {
 			font-size: 0.9em;
 			text-align: justify;
 			line-height: 20px;
 
+			// Modificadores de los textos del main
 			&--alumno {
 				margin: 10px 0px;
 			}
@@ -231,13 +220,14 @@ body {
 	}
 }
 
-// Footer
+// BLoque del footer
 .footer {
 	background-color: $negro;
 	color: $blanco;
 	text-align: center;
 	padding: 10px 10px 25px 10px;
 
+	// Elementos del footer
 	&__img{
 		width: map-get($images, "logo");
 	}
@@ -256,6 +246,7 @@ body {
 
 // Breakpoints de la página
 @media (max-width: 768px) {
+	// Modifica la anchura del título
 	.header {
 
 		&__h1 {
@@ -265,7 +256,7 @@ body {
 }
 
 @media (max-width: 600px) {
-
+	//Modifica el menú superior para que sea vertical
 	.navlist {
 
 		&--vertical{
@@ -288,6 +279,7 @@ body {
 }
 
 @media (max-width: 480px) {
+	// Modifica la disposición de los elementos del header
 	.header {
 		display: block;
 		text-align: center;
@@ -310,6 +302,7 @@ body {
 		}
 	}
 
+	// Modifica la disposición de los elementos del autor
 	.main{
 		&__article {
 			&__autor {

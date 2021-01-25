@@ -1,25 +1,8 @@
 @charset "UTF-8";
 /*
-	Para crear el css, en command line
-		- ubicar en la carpeta
-		- sass nombrearchivo.scss nombrearchivo.css
-			p.e.: sass style.scss style.css
+	Diseño de Aplicaciones web - Tarea 04
 
-		- para extended (por defecto) o compressed
-			sass --style=compressed nombrearchivo.scss nombrearchivo.css
-			* se suele nombrar el archivo nombrearchivo.min.css
-
-	Para que vaya actualizando solo
-		- sass --watch nombrearchivo.scss nombrearchivo.css
-
-	Flags de compilación
-		--no-source-map
-		--stop-on-error
-		--embred-source-map
-		--help
-		--quiet
-		--color / --no-color
-		--trace
+	Asier García Aristu
 */
 body {
   font-family: Verdana;
