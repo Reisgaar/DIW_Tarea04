@@ -23,6 +23,8 @@
 
 // Variables
 $negro: black;
+$blanco: white;
+$rojoclaro: rgba(255, 80, 80, 0.1);
 $borderojo: 2px solid red;
 
 // @mixin
@@ -30,18 +32,11 @@ $borderojo: 2px solid red;
 	margin: auto;
 }
 
-// Tamaños para los iconos
+// Tamaños para las imágenes
 $images : (
 	"icon" : 25px,
 	"logo" : 80px,
 	"image" : 100px
-);
-
-//Breakpoints para la página
-$breakpoints : (
-	"pequeño" : 576px,
-	"medio" : 768px,
-	"grande" : 992px
 );
 
 
@@ -49,6 +44,7 @@ $breakpoints : (
 body {
 	font-family: Verdana;
 	margin: 0;
+	min-width: 300px;
 }
 
 
@@ -59,21 +55,21 @@ body {
 	margin: 10px auto;
 	max-width: 1400px;
 
-	img {
+	&__img {
 		width: map-get($images, "logo");
-		margin-left: 10px;
 	}
 
-	h1 {
+	&__h1 {
 		text-align: center;
 		margin: 0px auto;
 	}
 
-	.lang {
+	&__lang {
 		float: right;
 		margin-right: 10px;
+		margin-bottom: -20px;
 
-		a{
+		&__a{
 			position: relative;
 			text-decoration:none;
 			color: $negro;
@@ -89,10 +85,10 @@ body {
 	text-align: center;
 	font-weight: bold;
 
-	li {
+	&__li {
 		display: inline;
 
-		a {
+		&__a {
 			position: relative;
 			text-decoration: none;
 			margin: 5px 10px;
@@ -100,22 +96,22 @@ body {
 	}
 
 
-	.navlist--blanco {
+	&--blanco {
 		color: $negro;
 
 		&:hover{
 			background-color: $negro;
-			color: white;			
+			color: $blanco;			
 		}
 
 		&.selected:hover {
-			background-color: white;
+			background-color: $blanco;
 			color: $negro;
 			cursor: default;
 		}
 	}
 
-	.navlist--rrss {
+	&--rrss {
 
 		img {
 			width: map-get($images, "icon");
@@ -129,22 +125,22 @@ body {
 		}
 	}
 
-	.navlist--negro {
+	&--negro {
 		display: inline-block;
 		background-color: $negro;
-		color: white;
+		color: $blanco;
 		padding: 3px 0px;
 		font-size: 0.8em;
 		font-weight: normal;
 
 		&:hover{
-			background-color: white;
+			background-color: $blanco;
 			color: $negro;			
 		}
 	}
 }
 
-// Efecto de subrayado del elemento menú seleccionado
+// Efecto de subrayado del elemento seleccionado
 .selected:before {
 	content: "";
 	position: absolute;
@@ -160,47 +156,47 @@ body {
 	max-width: 1200px;
 	padding: 1%;
 
-	img {
+	&__img {
 		width: 100%;
 	}
 	
-	.article {
+	&__article {
 		@include centrado;
 		width: 90%;
 
 		// Diferentes tipos de textos del main
-		&.texto {
+		&__texto {
 			font-size: 0.9em;
 			text-align: justify;
 			line-height: 20px;
 
-			.texto--alumno {
+			&--alumno {
 				margin: 10px 0px;
 			}
 
-			.texto--superior {
+			&--superior {
 				border-top: $borderojo;
 				border-bottom: $borderojo;
 				padding: 10px;
 				margin-top: 0;
 			}
 
-			.texto--video {
+			&--video {
 				text-align: center;
 				font-size: 0.8em;
 				line-height: 1.2em;
 				margin: 5px 0 30px 0;
 			}
 
-			.texto--inferior {
+			&--inferior {
 				margin-bottom: 5px;
 			}
 		}
 		
 		// Recuadro con la foto y descripción del autor
-		.autor {
+		&__autor {
 			display: flex;
-			background-color: rgba(255, 80, 80, 0.1);
+			background-color: $rojoclaro;
 			padding: 10px 10px 20px 10px;
 
 			img {
@@ -218,7 +214,7 @@ body {
 		}
 		
 		// Contenedor de vídeo
-		.video-container {
+		&__video-container {
 			position: relative;
 			padding-bottom: 56.25%; /* 16:9 */
 			height: 0;
@@ -238,15 +234,15 @@ body {
 // Footer
 .footer {
 	background-color: $negro;
-	color: white;
+	color: $blanco;
 	text-align: center;
 	padding: 10px 10px 25px 10px;
 
-	img{
+	&__img{
 		width: map-get($images, "logo");
 	}
 
-	.address{
+	&__address{
 		p {
 			font-size: 0.8em;
 		}
@@ -262,7 +258,7 @@ body {
 @media (max-width: 720px) {
 	.header {
 
-		h1 {
+		&__h1 {
 			width: 270px;
 		}
 	}
@@ -270,22 +266,25 @@ body {
 
 @media (max-width: 600px) {
 
-	.navlist__nav {
-		display: block !important;
-		margin: 10px 0px;
-	}
+	.navlist {
 
-
-	.navlist--blanco {
-
-		&:hover{
-			display: block;			
+		&--vertical{
+			display: block !important;
+			margin: 10px 0px;
 		}
 
-		&.selected:hover {
-			display: unset;
+		&--blanco {
+
+			&:hover{
+				display: block;			
+			}
+
+			&.selected:hover {
+				display: unset;
+			}
 		}
 	}
+
 }
 
 @media (max-width: 480px) {
@@ -293,11 +292,11 @@ body {
 		display: block;
 		text-align: center;
 	
-		h1 {
+		&__h1 {
 			margin-bottom: 25px;
 		}
 	
-		.lang {
+		&__lang {
 			right: 0px;
 			top: -185px;
 			margin-right: 10px;
@@ -306,8 +305,8 @@ body {
 	}
 
 	.main{
-		.article {
-			.autor {
+		&__article {
+			&__autor {
 				display: block;
 				text-align: center;
 			}

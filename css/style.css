@@ -24,6 +24,7 @@
 body {
   font-family: Verdana;
   margin: 0;
+  min-width: 300px;
 }
 
 .header {
@@ -32,19 +33,19 @@ body {
   margin: 10px auto;
   max-width: 1400px;
 }
-.header img {
+.header__img {
   width: 80px;
-  margin-left: 10px;
 }
-.header h1 {
+.header__h1 {
   text-align: center;
   margin: 0px auto;
 }
-.header .lang {
+.header__lang {
   float: right;
   margin-right: 10px;
+  margin-bottom: -20px;
 }
-.header .lang a {
+.header__lang__a {
   position: relative;
   text-decoration: none;
   color: black;
@@ -56,36 +57,36 @@ body {
   text-align: center;
   font-weight: bold;
 }
-.navlist li {
+.navlist__li {
   display: inline;
 }
-.navlist li a {
+.navlist__li__a {
   position: relative;
   text-decoration: none;
   margin: 5px 10px;
 }
-.navlist .navlist--blanco {
+.navlist--blanco {
   color: black;
 }
-.navlist .navlist--blanco:hover {
+.navlist--blanco:hover {
   background-color: black;
   color: white;
 }
-.navlist .navlist--blanco.selected:hover {
+.navlist--blanco.selected:hover {
   background-color: white;
   color: black;
   cursor: default;
 }
-.navlist .navlist--rrss img {
+.navlist--rrss img {
   width: 25px;
   height: 25px;
   margin: 0px -8px;
 }
-.navlist .navlist--rrss img:hover {
+.navlist--rrss img:hover {
   filter: invert(1);
   transform: scale(1.2);
 }
-.navlist .navlist--negro {
+.navlist--negro {
   display: inline-block;
   background-color: black;
   color: white;
@@ -93,7 +94,7 @@ body {
   font-size: 0.8em;
   font-weight: normal;
 }
-.navlist .navlist--negro:hover {
+.navlist--negro:hover {
   background-color: white;
   color: black;
 }
@@ -112,59 +113,59 @@ body {
   max-width: 1200px;
   padding: 1%;
 }
-.main img {
+.main__img {
   width: 100%;
 }
-.main .article {
+.main__article {
   margin: auto;
   width: 90%;
 }
-.main .article.texto {
+.main__article__texto {
   font-size: 0.9em;
   text-align: justify;
   line-height: 20px;
 }
-.main .article.texto .texto--alumno {
+.main__article__texto--alumno {
   margin: 10px 0px;
 }
-.main .article.texto .texto--superior {
+.main__article__texto--superior {
   border-top: 2px solid red;
   border-bottom: 2px solid red;
   padding: 10px;
   margin-top: 0;
 }
-.main .article.texto .texto--video {
+.main__article__texto--video {
   text-align: center;
   font-size: 0.8em;
   line-height: 1.2em;
   margin: 5px 0 30px 0;
 }
-.main .article.texto .texto--inferior {
+.main__article__texto--inferior {
   margin-bottom: 5px;
 }
-.main .article .autor {
+.main__article__autor {
   display: flex;
   background-color: rgba(255, 80, 80, 0.1);
   padding: 10px 10px 20px 10px;
 }
-.main .article .autor img {
+.main__article__autor img {
   width: 100px;
   height: 100px;
   border-radius: 50px;
   margin-right: 10px;
 }
-.main .article .autor p {
+.main__article__autor p {
   margin: auto;
   font-size: 0.8em;
   word-spacing: 5px;
 }
-.main .article .video-container {
+.main__article__video-container {
   position: relative;
   padding-bottom: 56.25%;
   /* 16:9 */
   height: 0;
 }
-.main .article .video-container iframe {
+.main__article__video-container iframe {
   border: none;
   position: absolute;
   top: 0;
@@ -179,10 +180,10 @@ body {
   text-align: center;
   padding: 10px 10px 25px 10px;
 }
-.footer img {
+.footer__img {
   width: 80px;
 }
-.footer .address p {
+.footer__address p {
   font-size: 0.8em;
 }
 .footer p {
@@ -191,16 +192,15 @@ body {
 }
 
 @media (max-width: 720px) {
-  .header h1 {
+  .header__h1 {
     width: 270px;
   }
 }
 @media (max-width: 600px) {
-  .navlist__nav {
+  .navlist--vertical {
     display: block !important;
     margin: 10px 0px;
   }
-
   .navlist--blanco:hover {
     display: block;
   }
@@ -213,17 +213,17 @@ body {
     display: block;
     text-align: center;
   }
-  .header h1 {
+  .header__h1 {
     margin-bottom: 25px;
   }
-  .header .lang {
+  .header__lang {
     right: 0px;
     top: -185px;
     margin-right: 10px;
     position: relative;
   }
 
-  .main .article .autor {
+  .main__article__autor {
     display: block;
     text-align: center;
   }
